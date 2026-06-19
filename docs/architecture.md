@@ -25,14 +25,14 @@ Generates:
 ## Data Flow
 ```bash
 Kali Linux
-↓
+    ↓
 Wazuh Agent
-↓
+    ↓
 Wazuh Manager
-↓
+    ↓
 Indexer
-↓
+    ↓
 Dashboard
-↓
+    ↓
 Security Analyst Investigation
 ```
