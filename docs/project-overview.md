@@ -11,7 +11,6 @@ The environment consists of two virtual machines running in VMware Fusion:
 
 The purpose of this project is to monitor security events, detect suspicious activities, investigate incidents, and provide centralized visibility across systems.
 
----
 
 ## Objectives
 
@@ -24,7 +23,6 @@ The primary objectives of this project are:
 - Support threat hunting activities
 - Map events to MITRE ATT&CK techniques
 
----
 
 ## Scope
 
@@ -37,7 +35,6 @@ This project focuses on:
 - Security investigations
 - Incident response workflows
 
----
 
 ## Expected Outcome
 
@@ -49,7 +46,6 @@ The platform should successfully:
 - Support threat hunting investigations
 - Demonstrate incident response capabilities
 
----
 
 ## Environment
 
@@ -64,7 +60,6 @@ The platform should successfully:
 
 - Wazuh Agent
 
----
 
 ## Project Workflow
 
@@ -76,7 +71,6 @@ The platform should successfully:
 6. Wazuh Dashboard displays the alerts.
 7. Analysts investigate and respond to incidents.
 
----
 
 ## Technologies Used
 
@@ -87,7 +81,6 @@ The platform should successfully:
 - Filebeat
 - VMware Fusion
 
----
 
 ## Outcome
 
