@@ -1,50 +1,76 @@
 # Setup Guide
 
-## Step 1
+## Ubuntu Server Setup
 
-Install Ubuntu Server.
+### Install Wazuh
 
-Update packages:
+```bash
+curl -sO https://packages.wazuh.com/4.13/wazuh-install.sh
+sudo bash wazuh-install.sh -a
+```
+
+### Verify Services
+
+```bash
+sudo systemctl status wazuh-manager
+sudo systemctl status wazuh-indexer
+sudo systemctl status wazuh-dashboard
+sudo systemctl status filebeat
+```
+
+## Kali Linux Setup
+
+### Add Wazuh Repository
+
+```bash
+curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | sudo gpg --dearmor -o /usr/share/keyrings/wazuh.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt stable main" | sudo tee /etc/apt/sources.list.d/wazuh.list
 
 sudo apt update
-sudo apt upgrade -y
+```
 
-## Step 2
+### Install Agent
 
-Install Wazuh:
+```bash
+sudo apt install wazuh-agent=4.13.1-1
+```
 
-curl -sO https://packages.wazuh.com/4.8/wazuh-install.sh
+### Configure Manager IP
 
-sudo bash wazuh-install.sh -a
+Edit:
 
-## Step 3
+```text
+/var/ossec/etc/ossec.conf
+```
 
-Install Kali Linux.
+Replace:
 
-## Step 4
+```xml
+<address>MANAGER_IP</address>
+```
 
-Install Wazuh Agent on Kali.
+With:
 
-## Step 5
+```xml
+<address>172.16.61.130</address>
+```
 
-Register Kali Agent with Wazuh Manager.
+### Register Agent
 
-## Step 6
+```bash
+sudo /var/ossec/bin/agent-auth -m 172.16.61.130
+```
 
-Verify connectivity from the Wazuh Dashboard.
+### Start Agent
 
-## Step 7
+```bash
+sudo systemctl enable wazuh-agent
+sudo systemctl start wazuh-agent
+```
 
-Enable File Integrity Monitoring.
+### Verify Agent Status
 
-## Step 8
-
-Generate test security events.
-
-## Step 9
-
-Investigate alerts using the dashboard.
-
-## Step 10
-
-Configure Active Response.
+```bash
+sudo systemctl status wazuh-agent
+```
