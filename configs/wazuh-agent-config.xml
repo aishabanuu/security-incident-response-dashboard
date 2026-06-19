@@ -1,0 +1,9 @@
+<client>
+  <server>
+    <address>WAZUH_SERVER_IP</address>
+    <port>1514</port>
+    <protocol>tcp</protocol>
+  </server>
+
+  <config-profile>kali-linux</config-profile>
+</client>
