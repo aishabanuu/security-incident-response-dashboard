@@ -17,6 +17,7 @@ sudo systemctl status wazuh-indexer
 sudo systemctl status wazuh-dashboard
 sudo systemctl status filebeat
 ```
+---
 
 ## Kali Linux Setup
 
