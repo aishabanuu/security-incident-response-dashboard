@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project demonstrates the implementation of a Security Incident Response Dashboard using the Wazuh SIEM platform. The environment was built using VMware Fusion on an Apple MacBook Air M1 with Ubuntu Server and Kali Linux virtual machines.
+This project demonstrates the implementation of a Security Incident Response Dashboard using the Wazuh SIEM platform. The environment was built using VMware Fusion with Ubuntu Server and Kali Linux virtual machines.
 
 The project covers the complete security operations workflow:
 
